@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - W Coffee</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        header { background: #222; color: white; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
+        .logo { width: 60px; transition: transform 0.3s, opacity 0.3s; }
+        .logo:hover { transform: scale(1.1); opacity: 0.8; }
+        .navbar ul { display: flex; padding: 0; }
+        .navbar li { margin-left: 30px; }
+        .navbar a { color: white; font-size: 18px; font-weight: 600; transition: color 0.3s, transform 0.3s; }
+        .navbar a:hover { color: #f4c542; transform: translateY(-3px); }
+
+        main { padding-top: 100px; }
+        .about-section { text-align: center; padding: 50px 20px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin: 30px auto; max-width: 1000px; transition: transform 0.3s; }
+        .about-section:hover { transform: scale(1.02); }
+        .about-section h2 { font-size: 2.8rem; color: #333; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
+        .about-section p { font-size: 1.1rem; color: #555; margin-bottom: 20px; max-width: 800px; margin: auto; }
+        .about-section img { width: 100%; max-width: 900px; margin: 30px 0; border-radius: 12px; transition: transform 0.3s, filter 0.3s; }
+        .about-section img:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        .order-btn { background: #f4c542; color: #333; padding: 15px 50px; border-radius: 80px; font-size: 1.3rem; font-weight: bold; margin-top: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+        .order-btn:hover { background: #ff7b00; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; align-items: center; }
+            .navbar ul { flex-direction: column; align-items: center; margin-top: 20px; }
+            .navbar li { margin-bottom: 15px; }
+            .about-section { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+		<header>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto;">
+            <div><img src="w1.jpeg" alt="W Coffee" style="width: 150px;"></div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="menu.html">menu</a></li>
+                    <li><a href="About Us.html">About</a></li>
+                    <li><a href="Contact Us.html">Contact</a></li>
+                    <li><a href="order.html">order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h2>About W Coffee</h2>
+            <p>At W Coffee, we believe in more than just serving coffee. We strive to create an experience, a place where people can relax, connect, and enjoy the perfect cup of coffee.</p>
+            <p>Whether you're looking for a morning pick-me-up, a cozy spot to work, or a place to unwind with friends, W Coffee offers an environment designed to inspire and refresh.</p>
+            <p>Our mission is simple: to create a warm and inviting space for everyone who loves coffee. Join us today and discover what makes W Coffee a special place.</p>
+            <img src="k.jpg" alt="W Coffee Interior">
+            <a href="order.html" class="order-btn">Order Now</a>
+        </section>
+    </main>
+
+</body>
+</html>

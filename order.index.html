@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - W Coffee</title>
+    <style>
+        header { background: #222; color: white; padding: 15px 0; position: fixed; width: 100%; top: 0; }
+        header .navbar ul { display: flex; list-style: none; padding: 0; }
+        header .navbar ul li { margin-left: 20px; }
+        header .navbar ul li a { color: white; text-decoration: none; font-size: 18px; }
+
+        img { width: 100%; max-width: 700px; height: auto; }
+
+        form input, form textarea, form button {
+            width: 100%; padding: 16px; margin: 10px 0; box-sizing: border-box;
+        }
+        form textarea { resize: vertical; }
+        form button { background: #f4c542; color: #333; border: none; cursor: pointer; }
+
+        footer { background: #222; color: white; padding: 30px 0; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 20px;">
+            <img src="w1.jpeg" alt="W Coffee" style="width: 50px;">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="About Us.html">About</a></li>
+                    <li><a href="Contact Us.html">Contact</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <center><img src="ff.jpg" width="600" height="600"></center>
+    <center><h2>Order Now</h2></center>
+    <form action="submit_order.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="address" placeholder="Your Address" required>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <textarea name="message" placeholder="Order Details" rows="4" required></textarea>
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+</body>
+</html>

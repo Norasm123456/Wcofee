@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W Coffee</title>
+
+    <!-- Styles -->
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('bb.jpeg') no-repeat center center/cover;
+            overflow-x: hidden;
+        }
+{
+  background-image: url("bb.jpeg");
+}
+        /* Header Styling */
+        header {
+            background: #222;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 80;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            justify-content: center;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Language and Country Selectors Styling */
+        .selectors-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-selector,
+        .country-selector {
+            background: #f4c542;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .language-selector:hover,
+        .country-selector:hover {
+            background: #e0a732;
+        }
+
+        .country-selector select,
+        .language-selector select {
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            color: black;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .hero a {
+            background: #f4c542;
+            color: #0;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .company-details p {
+            margin: 10px 0;
+        }
+
+        footer .sign-in-form input,
+        footer .sign-in-form button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script>
+        // Function to switch language
+        function switchLanguage() {
+            var currentLang = document.documentElement.lang;
+            if (currentLang === "ar") {
+                document.documentElement.lang = "en";
+                updateText('en');
+            } else {
+                document.documentElement.lang = "ar";
+                updateText('ar');
+            }
+        }
+
+        // Update text content based on selected language
+        function updateText(lang) {
+            if (lang === 'en') {
+                document.getElementById("home").innerText = "Home";
+                document.getElementById("menu").innerText = "Menu";
+                document.getElementById("about").innerText = "About";
+                document.getElementById("contact").innerText = "Contact";
+                document.getElementById("order").innerText = "Order";
+                document.getElementById("hero-heading").innerText = "Welcome to W Coffee";
+                document.getElementById("hero-paragraph").innerText = "The best coffee experience awaits you!";
+                document.getElementById("explore-menu").innerText = "Explore Our Menu";
+                document.getElementById("footer-contact").innerText = "Contact us";
+                document.getElementById("footer-location").innerText = "Our location: Al Salam Street, Salalah, Oman";
+                document.getElementById("footer-email").innerText = "Email: info@wcoffee.com";
+                document.getElementById("login-heading").innerText = "Login";
+                document.getElementById("username-placeholder").placeholder = "Username";
+                document.getElementById("password-placeholder").placeholder = "Password";
+                document.getElementById("login-button").innerText = "Login";
+            } else {
+                document.getElementById("home").innerText = "الصفحة الرئيسية";
+                document.getElementById("menu").innerText = "القائمة";
+                document.getElementById("about").innerText = "حول";
+                document.getElementById("contact").innerText = "اتصل";
+                document.getElementById("order").innerText = "طلب";
+                document.getElementById("hero-heading").innerText = "مرحبًا بكم في W Coffee";
+                document.getElementById("hero-paragraph").innerText = "أفضل تجربة قهوة في انتظارك!";
+                document.getElementById("explore-menu").innerText = "استكشف قائمتنا";
+                document.getElementById("footer-contact").innerText = "اتصل بنا";
+                document.getElementById("footer-location").innerText = "موقعنا: شارع السلام، صلالة، عمان";
+                document.getElementById("footer-email").innerText = "البريد الإلكتروني: info@wcoffee.com";
+                document.getElementById("login-heading").innerText = "تسجيل الدخول";
+                document.getElementById("username-placeholder").placeholder = "اسم المستخدم";
+                document.getElementById("password-placeholder").placeholder = "كلمة المرور";
+                document.getElementById("login-button").innerText = "تسجيل الدخول";
+            }
+        }
+
+        // Function to update location based on selected country
+        function changeCountry() {
+            var selectedCountry = document.getElementById("country-selector").value;
+            var locationText;
+
+            switch (selectedCountry) {
+                case "sa":
+                    locationText = "Our location: Riyadh, Saudi Arabia";
+                    break;
+                case "ae":
+                    locationText = "Our location: Dubai, UAE";
+                    break;
+                case "om":
+                    locationText = "Our location: Salalah, Oman";
+                    break;
+                case "kw":
+                    locationText = "Our location: Kuwait City, Kuwait";
+                    break;
+                case "bh":
+                    locationText = "Our location: Manama, Bahrain";
+                    break;
+                case "qa":
+                    locationText = "Our location: Doha, Qatar";
+                    break;
+                default:
+                    locationText = "Select a country to update location";
+            }
+            document.getElementById("footer-location").innerText = locationText;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: auto;">
+            <div class="logo">
+                <img src="w1.jpeg" alt="W Coffee">
+            </div>
+            <!-- Navigation Menu -->
+            <nav>
+                <ul>
+                    <li><a href="Home.html" id="home">Home</a></li>
+                    <li><a href="menu.html" id="menu">Menu</a></li>
+                    <li><a href="About Us.html" id="about">About</a></li>
+                    <li><a href="Contact Us.html" id="contact">Contact</a></li>
+                    <li><a href="order.html" id="order">Order</a></li>
+                </ul>
+            </nav>
+
+            <!-- Country and Language Selectors -->
+            <div class="selectors-container">
+                <!-- Country Selector -->
+                <div class="country-selector">
+                    <select id="country-selector" onchange="changeCountry()">
+                        <option value="sa">Saudi Arabia</option>
+                        <option value="ae">United Arab Emirates</option>
+                        <option value="om">Oman</option>
+                        <option value="kw">Kuwait</option>
+                        <option value="bh">Bahrain</option>
+                        <option value="qa">Qatar</option>
+                    </select>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="language-selector" onclick="switchLanguage()">EN/AR</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1 id="hero-heading">Welcome to W Coffee</h1>
+            <p id="hero-paragraph">The best coffee experience awaits you!</p>
+            <a href="menu.html" id="explore-menu">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h3 id="footer-contact">Contact us</h3>
+            <p>For any inquiries or assistance, you can contact us via the following number:</p>
+            <img src="a.png" width="300" height="100" alt="Contact">
+            <p><a href="tel:+968 72720611">+968 72720611</a></p>
+        </section>
+
+        <a href="https://www.instagram.com/wcafe_oman/">Visit my Instagram account</a>
+
+        <!-- Company Details -->
+        <div class="company-details">
+            <p id="footer-location">Our location: Al Salam Street, Salalah, Oman</p>
+            <p id="footer-email">Email: info@wcoffee727ha@gmail.com</p>
+        </div>
+		 <div id="sign-in-page">
+                <h2 id="login-heading">Login</h2>
+                <form action="/submit-signin" method="POST" class="sign-in-form">
+                    <input type="text" id="username" placeholder="username" required><br>
+                    <input type="password" id="password" placeholder="password" required><br>
+                    <button type="submit" id="login-button">Login</button>
+                </form>
+            </div>
+    </footer>
+</body>
+
+</html>
